@@ -1,31 +1,33 @@
-name: Deploy to ems.incrediblebihartourist.com
+name: Deploy Laravel to InfinityFree
 
-# Run manually or on push to the main branch
 on:
-  workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   deploy:
-    name: Deploy to ems.incrediblebihartourist.com
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Clone the latest code from GitHub
-      - name: Get latest code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      # Step 2: Upload code via FTP
-      - name: Deploy to ems.incrediblebihartourist.com
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Install Dependencies
+        run: composer install --no-dev --optimize-autoloader
+
+      - name: Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          server: ftpupload.net
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp
-          port: 21
           server-dir: /ems.incrediblebihartourist.com/htdocs/
-          timeout: 86400000
-          log-level: standard
+          exclude: |
+            **/.git*
+            **/.github/**
+            node_modules/**
