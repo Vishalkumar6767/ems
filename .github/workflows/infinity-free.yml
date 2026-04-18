@@ -21,9 +21,11 @@ jobs:
       - name: Deploy to ems.incrediblebihartourist.com
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ftpupload.net
-          username: if0_41663604
-          password: Vishalkumar6767
-          server-dir: /ems.incrediblebihartourist.com/htdocs/  # For addon domains
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          port: 21
+          server-dir: /ems.incrediblebihartourist.com/htdocs/
           timeout: 86400000
           log-level: standard
