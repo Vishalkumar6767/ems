@@ -2,32 +2,57 @@ name: Deploy Laravel to InfinityFree
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      # Checkout repository
+      - name: Checkout Code
         uses: actions/checkout@v4
 
+      # Setup PHP
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
+          php-version: 8.2
+          extensions: mbstring, pdo, pdo_mysql, fileinfo, openssl, tokenizer, xml, ctype, json
 
-      - name: Install Dependencies
+      # Install Composer Dependencies
+      - name: Install Composer Dependencies
         run: composer install --no-dev --optimize-autoloader
 
-      - name: Deploy
+      # Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Install NPM Packages
+      - name: Install NPM Dependencies
+        run: npm install
+
+      # Build Vite Assets
+      - name: Build Frontend Assets
+        run: npm run build
+
+      # Deploy to InfinityFree
+      - name: FTP Deploy to InfinityFree
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ftpupload.net
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          port: 21
           server-dir: /ems.incrediblebihartourist.com/htdocs/
           exclude: |
             **/.git*
             **/.github/**
-            node_modules/**
+            **/node_modules/**
+            tests/**
+            storage/logs/**
+            .env.example

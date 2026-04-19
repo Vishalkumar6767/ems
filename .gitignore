@@ -12,6 +12,7 @@
 /.vscode
 /.zed
 /auth.json
+/vendor
 /node_modules
 /public/build
 /public/hot
@@ -21,3 +22,5 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+/bootstrap/cache/*.php
+/storage/logs/*.log
