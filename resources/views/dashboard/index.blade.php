@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="row g-3 mb-4">
-    <div class="col-md-3">
+    <div class="col-6 col-md-3">
         <div class="stat-card">
             <div class="d-flex justify-content-between align-items-start">
                 <div>
@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-6 col-md-3">
         <div class="stat-card">
             <div class="d-flex justify-content-between align-items-start">
                 <div>
@@ -31,7 +31,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-6 col-md-3">
         <div class="stat-card">
             <div class="d-flex justify-content-between align-items-start">
                 <div>
@@ -44,7 +44,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-6 col-md-3">
         <div class="stat-card">
             <div class="d-flex justify-content-between align-items-start">
                 <div>
@@ -70,7 +70,7 @@
             $marked = $total - $stat['not_marked'];
             $percentage = $total > 0 ? round(($stat['present'] / $total) * 100) : 0;
         @endphp
-        <div class="col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3">
             <div class="floor-card">
                 <div class="floor-header">
                     <h6>{{ $stat['floor']->name }}</h6>

@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="row g-3 mb-4">
-    <div class="col-md-3">
+    <div class="col-6 col-md-3">
         <div class="stat-card">
             <div class="stat-label mb-1">Total Workers</div>
             <div class="stat-value">{{ $stats['total'] }}</div>
@@ -29,7 +29,7 @@
             <div class="stat-label">Late</div>
         </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-6 col-md-3">
         <div class="stat-card text-center">
             <div class="stat-value text-primary">{{ $stats['half_day'] }}</div>
             <div class="stat-label">Half Day</div>
@@ -40,7 +40,7 @@
 <h6 class="fw-bold text-uppercase text-muted mb-3"><i class="bi bi-people me-1"></i> Workers on this Floor</h6>
 
 <div class="table-card">
-    <table class="table table-hover">
+    <div class="table-responsive"><table class="table table-hover">
         <thead>
             <tr>
                 <th>#</th>
@@ -63,7 +63,7 @@
                 </tr>
             @endforeach
         </tbody>
-    </table>
+    </table></div>
 </div>
 
 <div class="mt-3">

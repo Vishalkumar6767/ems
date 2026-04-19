@@ -42,7 +42,7 @@
 <h6 class="fw-bold text-uppercase text-muted mt-4 mb-3"><i class="bi bi-layers me-1"></i> Floors in this Factory</h6>
 
 <div class="table-card">
-    <table class="table table-hover">
+    <div class="table-responsive"><table class="table table-hover">
         <thead>
             <tr>
                 <th>#</th>
@@ -66,7 +66,7 @@
                 </tr>
             @endforeach
         </tbody>
-    </table>
+    </table></div>
 </div>
 
 <div class="mt-3">

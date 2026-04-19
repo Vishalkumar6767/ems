@@ -9,11 +9,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
+    <!-- Mobile Top Bar -->
+    <div class="mobile-topbar">
+        <div class="mobile-brand">
+            <div class="mobile-logo" style="background: linear-gradient(135deg, #7c3aed, #6d28d9);"><span class="logo-letter">V</span></div>
+            <span class="mobile-title">VEMS <span class="badge bg-warning text-dark" style="font-size: 0.6rem;">SUPER</span></span>
+        </div>
+        <button class="sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle menu">
+            <i class="bi bi-list"></i>
+        </button>
+    </div>
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
     <div class="d-flex">
-        <nav class="sidebar" style="background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%);">
+        <nav class="sidebar" id="sidebar" style="background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%);">
             <div class="sidebar-brand">
-                <h4>Attendance Maker</h4>
-                <small><span class="badge bg-warning text-dark">SUPER ADMIN</span></small>
+                <div class="sidebar-logo" style="background: linear-gradient(135deg, #a78bfa, #7c3aed);"><span class="logo-letter">V</span></div>
+                <div class="brand-text">
+                    <h4>VEMS</h4>
+                    <small><span class="badge bg-warning text-dark">SUPER ADMIN</span></small>
+                </div>
             </div>
 
             <div class="nav-section mt-3">Overview</div>
@@ -100,5 +115,18 @@
             @yield('content')
         </div>
     </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('show');
+            document.querySelector('.sidebar-overlay').classList.toggle('show');
+            document.body.style.overflow = document.getElementById('sidebar').classList.contains('show') ? 'hidden' : '';
+        }
+        document.querySelectorAll('.sidebar .nav-link').forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (window.innerWidth < 992) { toggleSidebar(); }
+            });
+        });
+    </script>
 </body>
 </html>

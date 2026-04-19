@@ -4,15 +4,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'Dashboard') - Attendance Maker</title>
+    <title>@yield('title', 'Dashboard') - VEMS</title>
     @vite(['resources/css/app.scss', 'resources/js/app.js'])
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
+    <!-- Mobile Top Bar -->
+    <div class="mobile-topbar">
+        <div class="mobile-brand">
+            <div class="mobile-logo"><span class="logo-letter">V</span></div>
+            <span class="mobile-title">VEMS</span>
+        </div>
+        <button class="sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle menu">
+            <i class="bi bi-list"></i>
+        </button>
+    </div>
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
     <div class="d-flex">
-        <nav class="sidebar">
+        <nav class="sidebar" id="sidebar">
             <div class="sidebar-brand">
-                <h4>Attendance Maker</h4>
-                <small>Factory Management</small>
+                <div class="sidebar-logo"><span class="logo-letter">V</span></div>
+                <div class="brand-text">
+                    <h4>VEMS</h4>
+                    <small>Employee Management</small>
+                </div>
             </div>
 
             <div class="nav-section mt-3">Main</div>
@@ -109,6 +125,20 @@
         </div>
     </div>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('show');
+            document.querySelector('.sidebar-overlay').classList.toggle('show');
+            document.body.style.overflow = document.getElementById('sidebar').classList.contains('show') ? 'hidden' : '';
+        }
+        // Close sidebar when a nav link is clicked (mobile)
+        document.querySelectorAll('.sidebar .nav-link').forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (window.innerWidth < 992) {
+                    toggleSidebar();
+                }
+            });
+        });
+    </script>
 </body>
 </html>

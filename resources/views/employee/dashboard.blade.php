@@ -7,14 +7,14 @@
     <div class="col-md-4">
         <div class="stat-card">
             <h6 class="fw-bold mb-3"><i class="bi bi-person-badge me-1"></i> My Profile</h6>
-            <table class="table table-sm table-borderless mb-0">
+            <div class="table-responsive"><table class="table table-sm table-borderless mb-0">
                 <tr><td class="text-muted" width="110">Name</td><td class="fw-semibold">{{ $worker->name }}</td></tr>
                 <tr><td class="text-muted">Employee ID</td><td><code>{{ $worker->employee_id }}</code></td></tr>
                 <tr><td class="text-muted">Designation</td><td>{{ $worker->designation ?? '-' }}</td></tr>
                 <tr><td class="text-muted">Company</td><td>{{ $worker->floor->factory->name }}</td></tr>
                 <tr><td class="text-muted">Floor</td><td>{{ $worker->floor->name }}</td></tr>
                 <tr><td class="text-muted">Phone</td><td>{{ $worker->phone ?? '-' }}</td></tr>
-            </table>
+            </table></div>
         </div>
 
         <div class="stat-card mt-3">
@@ -67,7 +67,7 @@
 
         <h6 class="fw-bold text-uppercase text-muted mb-3"><i class="bi bi-clock-history me-1"></i> Last 7 Days</h6>
         <div class="table-card">
-            <table class="table table-hover">
+            <div class="table-responsive"><table class="table table-hover">
                 <thead><tr><th>Date</th><th>Status</th><th>Check In</th><th>Check Out</th></tr></thead>
                 <tbody>
                     @forelse($recentAttendance as $att)
@@ -81,7 +81,7 @@
                         <tr><td colspan="4" class="text-center text-muted py-3">No records yet.</td></tr>
                     @endforelse
                 </tbody>
-            </table>
+            </table></div>
         </div>
     </div>
 </div>

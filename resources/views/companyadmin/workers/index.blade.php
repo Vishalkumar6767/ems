@@ -6,7 +6,7 @@
     <a href="{{ route('companyadmin.workers.create') }}" class="btn btn-primary"><i class="bi bi-plus-lg me-1"></i> Add Worker</a>
 </div>
 <div class="table-card">
-    <table class="table table-hover">
+    <div class="table-responsive"><table class="table table-hover">
         <thead><tr><th>#</th><th>Employee ID</th><th>Name</th><th>Designation</th><th>Floor</th><th>Phone</th><th>Login</th><th width="150">Actions</th></tr></thead>
         <tbody>
             @forelse($workers as $i => $w)
@@ -28,6 +28,6 @@
                 <tr><td colspan="8" class="text-center text-muted py-4">No workers yet.</td></tr>
             @endforelse
         </tbody>
-    </table>
+    </table></div>
 </div>
 @endsection

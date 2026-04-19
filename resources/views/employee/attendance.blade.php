@@ -36,7 +36,7 @@
 </div>
 
 <div class="table-card">
-    <table class="table table-hover">
+    <div class="table-responsive"><table class="table table-hover">
         <thead><tr><th>#</th><th>Date</th><th>Day</th><th>Status</th><th>Check In</th><th>Check Out</th></tr></thead>
         <tbody>
             @forelse($attendances as $i => $att)
@@ -52,6 +52,6 @@
                 <tr><td colspan="6" class="text-center text-muted py-4">No attendance records for this month.</td></tr>
             @endforelse
         </tbody>
-    </table>
+    </table></div>
 </div>
 @endsection

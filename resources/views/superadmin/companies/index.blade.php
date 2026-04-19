@@ -9,7 +9,7 @@
 </div>
 
 <div class="table-card">
-    <table class="table table-hover">
+    <div class="table-responsive"><table class="table table-hover">
         <thead>
             <tr><th>#</th><th>Company Name</th><th>Address</th><th>Floors</th><th>Created</th><th width="150">Actions</th></tr>
         </thead>
@@ -34,6 +34,6 @@
                 <tr><td colspan="6" class="text-center text-muted py-4">No companies yet.</td></tr>
             @endforelse
         </tbody>
-    </table>
+    </table></div>
 </div>
 @endsection

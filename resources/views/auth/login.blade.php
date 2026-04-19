@@ -11,8 +11,8 @@
     <div class="login-page">
         <div class="login-card">
             <div class="text-center mb-4">
-                <span style="font-size: 3rem; color: #3b82f6;"><i class="bi bi-building-check"></i></span>
-                <h3 class="fw-bold mt-2">Attendance Maker</h3>
+                <div class="login-logo"><span class="logo-letter">V</span></div>
+                <h3 class="fw-bold mt-2">Employee<br>Management System</h3>
                 <p class="text-muted">Sign in to continue</p>
             </div>
 

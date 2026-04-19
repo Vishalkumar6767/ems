@@ -17,7 +17,7 @@
             <label class="form-label fw-semibold">Date</label>
             <input type="date" name="date" class="form-control" value="{{ $date }}">
         </div>
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
             <button type="submit" class="btn btn-primary w-100"><i class="bi bi-search me-1"></i> Load Workers</button>
         </div>
     </form>
@@ -41,7 +41,7 @@
             @csrf
             <input type="hidden" name="floor_id" value="{{ $selectedFloor->id }}">
             <input type="hidden" name="date" value="{{ $date }}">
-            <table class="table table-hover mb-0">
+            <div class="table-responsive"><table class="table table-hover mb-0">
                 <thead><tr><th width="60">#</th><th>Emp ID</th><th>Name</th><th>Status</th><th width="130">In</th><th width="130">Out</th></tr></thead>
                 <tbody>
                     @foreach($workers as $i => $w)
@@ -63,7 +63,7 @@
                         </tr>
                     @endforeach
                 </tbody>
-            </table>
+            </table></div>
             <div class="p-3 border-top bg-light text-end">
                 <button type="submit" class="btn btn-primary btn-lg"><i class="bi bi-check2-all me-1"></i> Save Attendance</button>
             </div>

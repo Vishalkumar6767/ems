@@ -14,7 +14,7 @@
                 @endforeach
             </select>
         </div>
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
             <label class="form-label fw-semibold">Floor</label>
             <select name="floor_id" class="form-select">
                 <option value="">All</option>
@@ -31,7 +31,7 @@
             <label class="form-label fw-semibold">To</label>
             <input type="date" name="date_to" class="form-control" value="{{ request('date_to', now()->format('Y-m-d')) }}">
         </div>
-        <div class="col-md-3">
+        <div class="col-6 col-md-3">
             <button type="submit" class="btn btn-primary w-100"><i class="bi bi-funnel me-1"></i> Generate</button>
         </div>
     </form>
@@ -51,7 +51,7 @@
     </div>
 
     <div class="table-card">
-        <table class="table table-hover">
+        <div class="table-responsive"><table class="table table-hover">
             <thead><tr><th>#</th><th>Date</th><th>Employee ID</th><th>Worker</th><th>Floor</th><th>Company</th><th>Status</th><th>In</th><th>Out</th></tr></thead>
             <tbody>
                 @forelse($attendances as $i => $att)
@@ -70,7 +70,7 @@
                     <tr><td colspan="9" class="text-center text-muted py-4">No records found.</td></tr>
                 @endforelse
             </tbody>
-        </table>
+        </table></div>
     </div>
 @else
     <div class="text-center py-5 text-muted">

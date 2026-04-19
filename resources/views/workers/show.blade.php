@@ -8,7 +8,7 @@
     <div class="col-md-4">
         <div class="stat-card">
             <h6 class="fw-bold mb-3"><i class="bi bi-person-badge me-1"></i> Worker Details</h6>
-            <table class="table table-sm table-borderless mb-0">
+            <div class="table-responsive"><table class="table table-sm table-borderless mb-0">
                 <tr>
                     <td class="text-muted" width="120">Name</td>
                     <td class="fw-semibold">{{ $worker->name }}</td>
@@ -33,7 +33,7 @@
                     <td class="text-muted">Joined</td>
                     <td>{{ $worker->created_at->format('d M Y') }}</td>
                 </tr>
-            </table>
+            </table></div>
         </div>
     </div>
     <div class="col-md-8">
@@ -67,7 +67,7 @@
 
         <h6 class="fw-bold text-uppercase text-muted mb-3"><i class="bi bi-clock-history me-1"></i> Recent Attendance</h6>
         <div class="table-card">
-            <table class="table table-hover">
+            <div class="table-responsive"><table class="table table-hover">
                 <thead>
                     <tr>
                         <th>Date</th>
@@ -94,7 +94,7 @@
                         </tr>
                     @endforelse
                 </tbody>
-            </table>
+            </table></div>
         </div>
     </div>
 </div>

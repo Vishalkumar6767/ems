@@ -15,7 +15,7 @@
 </div>
 
 <div class="table-card">
-    <table class="table table-hover">
+    <div class="table-responsive"><table class="table table-hover">
         <thead>
             <tr><th>#</th><th>Employee ID</th><th>Name</th><th>Designation</th><th>Phone</th><th>Floor</th><th>Company</th><th width="60"></th></tr>
         </thead>
@@ -35,6 +35,6 @@
                 <tr><td colspan="8" class="text-center text-muted py-4">No workers found.</td></tr>
             @endforelse
         </tbody>
-    </table>
+    </table></div>
 </div>
 @endsection

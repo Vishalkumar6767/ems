@@ -21,7 +21,7 @@
 </div>
 
 <div class="table-card">
-    <table class="table table-hover">
+    <div class="table-responsive"><table class="table table-hover">
         <thead>
             <tr><th>#</th><th>Name</th><th>Email</th><th>Role</th><th>Company</th><th width="120">Actions</th></tr>
         </thead>
@@ -51,6 +51,6 @@
                 <tr><td colspan="6" class="text-center text-muted py-4">No users found.</td></tr>
             @endforelse
         </tbody>
-    </table>
+    </table></div>
 </div>
 @endsection

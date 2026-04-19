@@ -9,11 +9,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
+    <!-- Mobile Top Bar -->
+    <div class="mobile-topbar">
+        <div class="mobile-brand">
+            <div class="mobile-logo" style="background: linear-gradient(135deg, #059669, #047857);"><span class="logo-letter">V</span></div>
+            <span class="mobile-title">VEMS <span class="badge bg-success" style="font-size: 0.6rem;">EMPLOYEE</span></span>
+        </div>
+        <button class="sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle menu">
+            <i class="bi bi-list"></i>
+        </button>
+    </div>
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
     <div class="d-flex">
-        <nav class="sidebar" style="background: linear-gradient(135deg, #059669 0%, #064e3b 100%);">
+        <nav class="sidebar" id="sidebar" style="background: linear-gradient(135deg, #059669 0%, #064e3b 100%);">
             <div class="sidebar-brand">
-                <h4>Employee Portal</h4>
-                <small>{{ Auth::user()->factory->name ?? '' }}</small>
+                <div class="sidebar-logo" style="background: linear-gradient(135deg, #34d399, #059669);"><span class="logo-letter">V</span></div>
+                <div class="brand-text">
+                    <h4>VEMS</h4>
+                    <small>{{ Auth::user()->factory->name ?? 'Employee Portal' }}</small>
+                </div>
             </div>
 
             <div class="nav-section mt-3">Menu</div>
@@ -58,5 +73,18 @@
             @yield('content')
         </div>
     </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('show');
+            document.querySelector('.sidebar-overlay').classList.toggle('show');
+            document.body.style.overflow = document.getElementById('sidebar').classList.contains('show') ? 'hidden' : '';
+        }
+        document.querySelectorAll('.sidebar .nav-link').forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (window.innerWidth < 992) { toggleSidebar(); }
+            });
+        });
+    </script>
 </body>
 </html>

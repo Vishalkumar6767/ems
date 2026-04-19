@@ -7,14 +7,14 @@
     <div class="col-md-4">
         <div class="stat-card">
             <h6 class="fw-bold mb-3"><i class="bi bi-person-badge me-1"></i> Details</h6>
-            <table class="table table-sm table-borderless mb-0">
+            <div class="table-responsive"><table class="table table-sm table-borderless mb-0">
                 <tr><td class="text-muted" width="110">Name</td><td class="fw-semibold">{{ $worker->name }}</td></tr>
                 <tr><td class="text-muted">Employee ID</td><td><code>{{ $worker->employee_id }}</code></td></tr>
                 <tr><td class="text-muted">Designation</td><td>{{ $worker->designation ?? '-' }}</td></tr>
                 <tr><td class="text-muted">Phone</td><td>{{ $worker->phone ?? '-' }}</td></tr>
                 <tr><td class="text-muted">Floor</td><td>{{ $worker->floor->name }}</td></tr>
                 <tr><td class="text-muted">Login</td><td>{!! $worker->user ? '<span class="badge bg-success">Active</span>' : '<span class="badge bg-secondary">None</span>' !!}</td></tr>
-            </table>
+            </table></div>
         </div>
     </div>
     <div class="col-md-8">
@@ -25,7 +25,7 @@
             <div class="col-3"><div class="stat-card text-center"><div class="stat-value text-primary">{{ $monthStats['half_day'] }}</div><div class="stat-label">Half Day</div></div></div>
         </div>
         <div class="table-card">
-            <table class="table table-hover">
+            <div class="table-responsive"><table class="table table-hover">
                 <thead><tr><th>Date</th><th>Status</th><th>Check In</th><th>Check Out</th></tr></thead>
                 <tbody>
                     @forelse($recentAttendance as $att)
@@ -39,7 +39,7 @@
                         <tr><td colspan="4" class="text-center text-muted py-3">No records.</td></tr>
                     @endforelse
                 </tbody>
-            </table>
+            </table></div>
         </div>
     </div>
 </div>

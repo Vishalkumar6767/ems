@@ -6,7 +6,7 @@
     <a href="{{ route('companyadmin.floors.create') }}" class="btn btn-primary"><i class="bi bi-plus-lg me-1"></i> Add Floor</a>
 </div>
 <div class="table-card">
-    <table class="table table-hover">
+    <div class="table-responsive"><table class="table table-hover">
         <thead><tr><th>#</th><th>Name</th><th>Floor No.</th><th>Workers</th><th width="150">Actions</th></tr></thead>
         <tbody>
             @forelse($floors as $i => $f)
@@ -25,6 +25,6 @@
                 <tr><td colspan="5" class="text-center text-muted py-4">No floors yet.</td></tr>
             @endforelse
         </tbody>
-    </table>
+    </table></div>
 </div>
 @endsection

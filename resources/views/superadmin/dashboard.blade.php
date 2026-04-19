@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="row g-3 mb-4">
-    <div class="col-md-3">
+    <div class="col-6 col-md-3">
         <div class="stat-card">
             <div class="d-flex justify-content-between align-items-start">
                 <div>
@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-6 col-md-3">
         <div class="stat-card">
             <div class="d-flex justify-content-between align-items-start">
                 <div>
@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-6 col-md-3">
         <div class="stat-card">
             <div class="d-flex justify-content-between align-items-start">
                 <div>
@@ -38,7 +38,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-6 col-md-3">
         <div class="stat-card">
             <div class="d-flex justify-content-between align-items-start">
                 <div>

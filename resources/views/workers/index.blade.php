@@ -12,7 +12,7 @@
 </div>
 
 <div class="table-card">
-    <table class="table table-hover">
+    <div class="table-responsive"><table class="table table-hover">
         <thead>
             <tr>
                 <th>#</th>
@@ -52,6 +52,6 @@
                 </tr>
             @endforelse
         </tbody>
-    </table>
+    </table></div>
 </div>
 @endsection
