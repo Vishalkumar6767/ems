@@ -13,7 +13,7 @@
     <div class="mobile-topbar">
         <div class="mobile-brand">
             <div class="mobile-logo"><span class="logo-letter">V</span></div>
-            <span class="mobile-title">VEMS <span class="badge bg-info text-dark" style="font-size: 0.6rem;">ADMIN</span></span>
+            <span class="mobile-title">EMS <span class="badge bg-info text-dark" style="font-size: 0.6rem;">ADMIN</span></span>
         </div>
         <button class="sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle menu">
             <i class="bi bi-list"></i>

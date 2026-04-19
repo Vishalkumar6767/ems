@@ -13,7 +13,7 @@
     <div class="mobile-topbar">
         <div class="mobile-brand">
             <div class="mobile-logo" style="background: linear-gradient(135deg, #059669, #047857);"><span class="logo-letter">V</span></div>
-            <span class="mobile-title">VEMS <span class="badge bg-success" style="font-size: 0.6rem;">EMPLOYEE</span></span>
+            <span class="mobile-title">EMS <span class="badge bg-success" style="font-size: 0.6rem;">EMPLOYEE</span></span>
         </div>
         <button class="sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle menu">
             <i class="bi bi-list"></i>
@@ -26,7 +26,7 @@
             <div class="sidebar-brand">
                 <div class="sidebar-logo" style="background: linear-gradient(135deg, #34d399, #059669);"><span class="logo-letter">V</span></div>
                 <div class="brand-text">
-                    <h4>VEMS</h4>
+                    <h4>EMS</h4>
                     <small>{{ Auth::user()->factory->name ?? 'Employee Portal' }}</small>
                 </div>
             </div>

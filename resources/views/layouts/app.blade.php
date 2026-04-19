@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'Dashboard') - VEMS</title>
+    <title>@yield('title', 'Dashboard') - EMS</title>
     @vite(['resources/css/app.scss', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
@@ -13,7 +13,7 @@
     <div class="mobile-topbar">
         <div class="mobile-brand">
             <div class="mobile-logo"><span class="logo-letter">V</span></div>
-            <span class="mobile-title">VEMS</span>
+            <span class="mobile-title">EMS</span>
         </div>
         <button class="sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle menu">
             <i class="bi bi-list"></i>
@@ -26,7 +26,7 @@
             <div class="sidebar-brand">
                 <div class="sidebar-logo"><span class="logo-letter">V</span></div>
                 <div class="brand-text">
-                    <h4>VEMS</h4>
+                    <h4>EMS</h4>
                     <small>Employee Management</small>
                 </div>
             </div>
